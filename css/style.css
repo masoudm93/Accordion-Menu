@@ -1,0 +1,109 @@
+.course-title {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  padding: 100px;
+  font-size: 34px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  background-color: #efefef;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-menu {
+  width: 250px;
+  display: block;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: right;
+}
+
+.item {
+  border-top: 1px solid #007973;
+  border-bottom: 1px solid #273057;
+}
+
+.btn {
+  display: block;
+  padding: 15px 20px;
+  background-color: #007973;
+  color: #efefef;
+  position: relative;
+}
+
+.subMenu {
+  background-color: #273057;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.5s ease-in-out;
+}
+
+.subMenu a {
+  display: block;
+  padding: 15px 20px;
+  color: #efefef;
+  font-size: 16px;
+  border-bottom: 1px solid #394c7f;
+  position: relative;
+}
+
+.subMenu a::before {
+  content: '';
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.subMenu a:hover::before {
+  content: '';
+  position: absolute;
+  height: 0;
+  width: 6px;
+  left: 0;
+  top: 0;
+  opacity: 1;
+  border-top: 24px solid transparent;
+  border-left: 11px solid #efefef;
+  border-bottom: 24px solid transparent;
+}
+
+.subMenu a::after {
+  content: '';
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.subMenu a:hover::after {
+  content: '';
+  position: absolute;
+  height: 0;
+  width: 6px;
+  right: 0;
+  top: 0;
+  opacity: 1;
+  border-top: 24px solid transparent;
+  border-right: 11px solid #efefef;
+  border-bottom: 24px solid transparent;
+}
+
+.subMenu a:hover {
+  background: #273057;
+  background: linear-gradient(to bottom, #273057 0%, #273057 50%, #394c7f);
+}
+
+.item:target .subMenu {
+  max-height: 200px;
+}
